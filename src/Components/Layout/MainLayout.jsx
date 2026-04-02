@@ -25,6 +25,24 @@
 // import ProfileExit from '../Profile/ProfileExit';
 // import ProfileConnections from '../Profile/ProfileConnections';
 // import EmploymentOfferLetter from "../JobOffer/EmploymentOfferLetter";
+
+// // ATS Components
+// import ATSDashboard from '../ATS_Onboarding_Components/ATS/ATSDashboard';
+// import JobRequisitions from '../ATS_Onboarding_Components/ATS/JobRequisitions';
+// import CandidateDatabase from '../ATS_Onboarding_Components/ATS/CandidateDatabase';
+// import CandidateScreening from '../ATS_Onboarding_Components/ATS/CandidateScreening';
+// import InterviewScheduling from '../ATS_Onboarding_Components/ATS/InterviewScheduling';
+// import OfferManagement from '../ATS_Onboarding_Components/ATS/OfferManagement';
+// import ATSAnalytics from '../ATS_Onboarding_Components/ATS/ATSAnalytics';
+
+// // On-boarding Components
+// import OnboardingDashboard from '../ATS_Onboarding_Components/Onboarding/OnboardingDashboard';
+// import PreJoining from '../ATS_Onboarding_Components/Onboarding/PreJoining';
+// import JoiningForm from '../ATS_Onboarding_Components/Onboarding/JoiningForm';
+// import DocumentTracker from '../ATS_Onboarding_Components/Onboarding/DocumentTracker';
+// import SystemAccess from '../ATS_Onboarding_Components/Onboarding/SystemAccess';
+// import ProbationTracking from '../ATS_Onboarding_Components/Onboarding/ProbationTracking';
+// import ExitManagement from '../ATS_Onboarding_Components/Onboarding/ExitManagement';
  
 // const MainLayout = () => {
 //   return (
@@ -48,6 +66,7 @@
 //           {/* Team requests */}
 //           <Route path="reg-req" element={<RegularisseRequest />} />
 //           <Route path="team's-leave-request" element={<TeamLeavereq />} />
+          
 //           {/* Profile routes - all relative paths */}
 //           <Route path="profile" element={<Profile />} />
 //           <Route path="profile/overview" element={<ProfileOverview />} />
@@ -60,6 +79,23 @@
 //           <Route path="profile/exit" element={<ProfileExit />} />
 //           <Route path="profile/connections" element={<ProfileConnections />} />
           
+//           {/* ATS Routes */}
+//           <Route path="ats" element={<ATSDashboard />} />
+//           <Route path="ats/jobs" element={<JobRequisitions />} />
+//           <Route path="ats/candidates" element={<CandidateDatabase />} />
+//           <Route path="ats/screening" element={<CandidateScreening />} />
+//           <Route path="ats/interviews" element={<InterviewScheduling />} />
+//           <Route path="ats/offers" element={<OfferManagement />} />
+//           <Route path="ats/analytics" element={<ATSAnalytics />} />
+          
+//           {/* On-boarding Routes */}
+//           <Route path="onboarding" element={<OnboardingDashboard />} />
+//           <Route path="onboarding/pre-joining" element={<PreJoining />} />
+//           <Route path="onboarding/joining-form" element={<JoiningForm />} />
+//           <Route path="onboarding/documents" element={<DocumentTracker />} />
+//           <Route path="onboarding/system-access" element={<SystemAccess />} />
+//           <Route path="onboarding/probation" element={<ProbationTracking />} />
+//           <Route path="onboarding/exit" element={<ExitManagement />} />
 //         </Routes>
 //       </div>
 //     </div>
@@ -67,12 +103,6 @@
 // };
  
 // export default MainLayout;
-
-
-
-
-
-
 
 
 
@@ -116,12 +146,18 @@ import ATSAnalytics from '../ATS_Onboarding_Components/ATS/ATSAnalytics';
 
 // On-boarding Components
 import OnboardingDashboard from '../ATS_Onboarding_Components/Onboarding/OnboardingDashboard';
+import HRInitiation from '../ATS_Onboarding_Components/Onboarding/HRInitiation';
+import OfferLetterManagement from '../ATS_Onboarding_Components/Onboarding/OfferLetterManagement';
 import PreJoining from '../ATS_Onboarding_Components/Onboarding/PreJoining';
 import JoiningForm from '../ATS_Onboarding_Components/Onboarding/JoiningForm';
 import DocumentTracker from '../ATS_Onboarding_Components/Onboarding/DocumentTracker';
 import SystemAccess from '../ATS_Onboarding_Components/Onboarding/SystemAccess';
+import AssetManagement from '../ATS_Onboarding_Components/Onboarding/AssetManagement';
 import ProbationTracking from '../ATS_Onboarding_Components/Onboarding/ProbationTracking';
 import ExitManagement from '../ATS_Onboarding_Components/Onboarding/ExitManagement';
+import EnhancedAnalytics from '../ATS_Onboarding_Components/Onboarding/EnhancedAnalytics';
+import ManagerReview from "../ATS_Onboarding_Components/Onboarding/ManagerReview";
+import Candidateportal from "../ATS_Onboarding_Components/Onboarding/CandidatePortal";
  
 const MainLayout = () => {
   return (
@@ -169,12 +205,18 @@ const MainLayout = () => {
           
           {/* On-boarding Routes */}
           <Route path="onboarding" element={<OnboardingDashboard />} />
+          <Route path="onboarding/hr-initiation" element={<HRInitiation />} />
+          <Route path="onboarding/offer-letters" element={<OfferLetterManagement />} />
           <Route path="onboarding/pre-joining" element={<PreJoining />} />
           <Route path="onboarding/joining-form" element={<JoiningForm />} />
+          <Route path="onboarding/enhanced" element={<EnhancedAnalytics />} />
           <Route path="onboarding/documents" element={<DocumentTracker />} />
           <Route path="onboarding/system-access" element={<SystemAccess />} />
+          <Route path="onboarding/asset-management" element={<AssetManagement />} />
           <Route path="onboarding/probation" element={<ProbationTracking />} />
           <Route path="onboarding/exit" element={<ExitManagement />} />
+          <Route path="onboarding/manager-review" element={<ManagerReview />} />
+          <Route path="onboarding/Candidateportal" element={<Candidateportal />} />
         </Routes>
       </div>
     </div>

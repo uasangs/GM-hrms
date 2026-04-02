@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ProbationTracking.css";
 import Header from "../../Header/Header";
+import { Link } from "react-router-dom";
 
 const ProbationTracking = () => {
   const [employees, setEmployees] = useState([
@@ -123,7 +124,12 @@ const ProbationTracking = () => {
                 ))}
               </div>
 
-              <button className="schedule-review-btn">Schedule Review</button>
+              
+              <Link to="/dashboard/onboarding/manager-review">
+  <button className="schedule-review-btn">
+    Schedule Review
+  </button>
+</Link>
             </div>
           ))}
         </div>

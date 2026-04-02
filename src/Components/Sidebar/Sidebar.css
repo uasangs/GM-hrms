@@ -27,6 +27,7 @@
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding-bottom: 60px; /* ✅ Add this - creates space for logout button */
 }
 
 .slidebar-all-links::-webkit-scrollbar {
@@ -132,13 +133,16 @@
   font-size: 0.75rem !important;
   cursor: pointer;
   color: #fff;
-  padding-top: 10px;
+  padding: 15px 0px; /* ✅ Increased padding for better spacing */
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 20px;
   right: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: #24145b; /* ✅ Add background to prevent see-through */
+  z-index: 10; /* ✅ Ensure it stays on top */
 }
+
 
 .logout-slidebar .icon-sildebar {
   margin-right: 10px;

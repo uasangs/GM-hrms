@@ -122,7 +122,7 @@ const HomeDashboard = () => {
               </tbody>
             </table>
 
-            <Link to="/attendance">
+            <Link to="/dashboard/attendance">
               <div className="calendar-link">
                <div style={{display:"flex", gap:"10px"}}>  <FaCalendarAlt className="icon" /> My Attendance Calendar </div>
                 <span>

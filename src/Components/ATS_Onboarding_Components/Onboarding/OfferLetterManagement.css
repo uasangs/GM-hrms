@@ -1,0 +1,502 @@
+/* Offer Letter Management - Clean Professional Design */
+.offer-management-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8f9fa;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.offer-management-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 1% 1%;
+  box-sizing: border-box;
+}
+
+/* Page Header */
+.offer-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2%;
+  flex-wrap: wrap;
+  gap: 1%;
+}
+
+.offer-page-header h1 {
+  color: #E365A6;
+  font-size: clamp(1.2rem, 2.8vw, 1.875rem);
+  font-weight: 600;
+  margin: 0 0 0.5% 0;
+}
+
+.offer-page-header p {
+  color: #6b7280;
+  font-size: clamp(0.7rem, 1.8vw, 0.875rem);
+  margin: 0;
+}
+
+.generate-offer-btn {
+  padding: clamp(6px, 1.2vw, 10px) clamp(12px, 2vw, 18px);
+  background: #24145b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: clamp(0.75rem, 1.6vw, 0.875rem);
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1.2vw, 8px);
+  transition: all 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+  box-shadow: 0 2px 6px rgba(227, 101, 166, 0.25);
+}
+
+.generate-offer-btn:hover {
+  background: #20145b;
+  box-shadow: 0 4px 10px rgba(227, 101, 166, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+}
+
+/* Stats Grid */
+.offer-stats {
+  display: flex;
+  gap: clamp(10px, 2vw, 16px);
+  margin-bottom: 2%;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: clamp(140px, 22vw, 180px);
+  background: white;
+  padding: clamp(12px, 2.2vw, 18px);
+  border-radius: clamp(8px, 1.5vw, 12px);
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.2vw, 16px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  border-color: #E365A6;
+}
+
+.stat-icon {
+  font-size: clamp(1.3rem, 2.7vw, 1.6rem);
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.stat-info {
+  flex: 1;
+}
+
+.stat-number {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+  color: #6b7280;
+  margin-top: clamp(2px, 0.4vw, 4px);
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  gap: clamp(8px, 1.5vw, 12px);
+  margin-bottom: 2%;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: clamp(7px, 1.3vw, 10px) clamp(14px, 2.4vw, 18px);
+  background: white;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.filter-tab:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+.filter-tab.active {
+  background: #E365A6;
+  color: white;
+  border-color: #E365A6;
+}
+
+/* Offers Grid */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(320px, 45vw, 420px), 1fr));
+  gap: clamp(14px, 2.2vw, 20px);
+}
+
+.offer-card {
+  background: white;
+  border-radius: clamp(8px, 1.5vw, 12px);
+  padding: clamp(14px, 2.2vw, 18px);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.offer-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  border-color: #E365A6;
+}
+
+.offer-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(12px, 2vw, 16px);
+  padding-bottom: clamp(10px, 1.8vw, 14px);
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.candidate-info h3 {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: #1f2937;
+  margin: 0 0 clamp(4px, 0.8vw, 6px) 0;
+  font-weight: 600;
+}
+
+.candidate-info p {
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+  color: #E365A6;
+  margin: 0 0 clamp(2px, 0.4vw, 3px) 0;
+  font-weight: 500;
+}
+
+.candidate-email {
+  font-size: clamp(0.65rem, 1.3vw, 0.72rem);
+  color: #9ca3af;
+  margin: 0;
+}
+
+.offer-status-badge {
+  padding: clamp(5px, 0.9vw, 7px) clamp(11px, 2.1vw, 14px);
+  border-radius: 4px;
+  font-size: clamp(0.65rem, 1.4vw, 0.72rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.offer-status-badge.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.offer-status-badge.sent {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.offer-status-badge.accepted {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.offer-status-badge.declined {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.offer-status-badge.clarification {
+  background: #fde68a;
+  color: #78350f;
+}
+
+/* Offer Details */
+.offer-details {
+  margin-bottom: clamp(12px, 2vw, 16px);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(8px, 1.5vw, 10px);
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3px, 0.6vw, 4px);
+  padding: clamp(6px, 1.1vw, 8px);
+  background: #f9fafb;
+  border-radius: 4px;
+}
+
+.detail-label {
+  font-size: clamp(0.65rem, 1.3vw, 0.72rem);
+  color: #6b7280;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.detail-value {
+  font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Offer Timeline */
+.offer-timeline {
+  margin-bottom: clamp(12px, 2vw, 16px);
+  padding: clamp(10px, 1.8vw, 14px);
+  background: #f9fafb;
+  border-radius: 6px;
+}
+
+.timeline-title {
+  font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+  color: #1f2937;
+  font-weight: 600;
+  margin: 0 0 clamp(8px, 1.5vw, 10px) 0;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.5vw, 10px);
+  margin-bottom: clamp(6px, 1.2vw, 8px);
+  font-size: clamp(0.7rem, 1.5vw, 0.75rem);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-icon {
+  width: clamp(18px, 3.5vw, 24px);
+  height: clamp(18px, 3.5vw, 24px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.7rem, 1.4vw, 0.8rem);
+  flex-shrink: 0;
+}
+
+.timeline-icon.completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.timeline-icon.pending {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+.timeline-text {
+  flex: 1;
+  color: #6b7280;
+}
+
+.timeline-date {
+  font-size: clamp(0.65rem, 1.3vw, 0.7rem);
+  color: #9ca3af;
+}
+
+/* Offer Actions */
+.offer-actions {
+  display: flex;
+  gap: clamp(7px, 1.3vw, 9px);
+  flex-wrap: wrap;
+}
+
+.btn-view-offer,
+.btn-resend,
+.btn-download {
+  flex: 1;
+  min-width: clamp(80px, 18vw, 100px);
+  padding: clamp(7px, 1.3vw, 9px) clamp(10px, 2vw, 14px);
+  border: none;
+  border-radius: 5px;
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(4px, 0.8vw, 6px);
+}
+
+.btn-view-offer {
+  background: #E365A6;
+  color: white;
+  box-shadow: 0 1px 3px rgba(227, 101, 166, 0.3);
+}
+
+.btn-view-offer:hover {
+  background: #d946a0;
+}
+
+.btn-resend {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 1px 3px rgba(59, 130, 246, 0.3);
+}
+
+.btn-resend:hover {
+  background: #2563eb;
+}
+
+.btn-download {
+  background: white;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-download:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+/* Candidate Response Section */
+.candidate-response {
+  margin-top: clamp(10px, 1.8vw, 14px);
+  padding: clamp(10px, 1.8vw, 14px);
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+}
+
+.response-header {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1.2vw, 8px);
+  margin-bottom: clamp(6px, 1.2vw, 8px);
+}
+
+.response-icon {
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  color: #f59e0b;
+}
+
+.response-title {
+  font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+  color: #92400e;
+  font-weight: 600;
+  margin: 0;
+}
+
+.response-text {
+  font-size: clamp(0.7rem, 1.5vw, 0.75rem);
+  color: #78350f;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: clamp(40px, 6vw, 60px) clamp(20px, 3vw, 30px);
+  background: white;
+  border-radius: clamp(8px, 1.5vw, 12px);
+  border: 1px solid #e5e7eb;
+}
+
+.empty-icon {
+  font-size: clamp(3rem, 6vw, 4rem);
+  color: #d1d5db;
+  margin-bottom: clamp(14px, 2.4vw, 18px);
+}
+
+.empty-state h3 {
+  color: #6b7280;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  margin: 0 0 clamp(8px, 1.5vw, 10px) 0;
+}
+
+.empty-state p {
+  color: #9ca3af;
+  font-size: clamp(0.8rem, 1.7vw, 0.9rem);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (min-width: 1200px) {
+  .offer-management-content {
+    padding: 1% 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .offer-management-content {
+    padding: 2% 3%;
+  }
+
+  .offer-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .generate-offer-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .offer-stats {
+    flex-direction: column;
+  }
+
+  .stat-card {
+    min-width: 100%;
+  }
+
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .offer-management-content {
+    padding: 3% 4%;
+  }
+
+  .offer-actions {
+    flex-direction: column;
+  }
+
+  .btn-view-offer,
+  .btn-resend,
+  .btn-download {
+    min-width: 100%;
+  }
+}
